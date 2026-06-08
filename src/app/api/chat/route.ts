@@ -1,8 +1,7 @@
-import { headers } from "next/headers";
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 import { streamText, UIMessage, convertToModelMessages } from "ai";
 import { z } from "zod";
-import { auth } from "@/lib/auth";
+import { getOptionalSession } from "@/lib/session";
 
 // Zod schema for message validation
 const messagePartSchema = z.object({
@@ -23,7 +22,7 @@ const chatRequestSchema = z.object({
 
 export async function POST(req: Request) {
   // Verify user is authenticated
-  const session = await auth.api.getSession({ headers: await headers() });
+  const session = await getOptionalSession();
   if (!session) {
     return new Response(JSON.stringify({ error: "Unauthorized" }), {
       status: 401,

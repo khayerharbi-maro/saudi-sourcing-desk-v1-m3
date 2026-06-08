@@ -1,4 +1,3 @@
-import { headers } from "next/headers"
 import { redirect } from "next/navigation"
 import { SignInButton } from "@/components/auth/sign-in-button"
 import {
@@ -8,14 +7,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { auth } from "@/lib/auth"
+import { getOptionalSession } from "@/lib/session"
 
 export default async function LoginPage({
   searchParams,
 }: {
   searchParams: Promise<{ reset?: string }>
 }) {
-  const session = await auth.api.getSession({ headers: await headers() })
+  const session = await getOptionalSession()
 
   if (session) {
     redirect("/dashboard")

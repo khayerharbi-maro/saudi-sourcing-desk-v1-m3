@@ -16,7 +16,7 @@ export const protectedRoutes = ["/chat", "/dashboard", "/profile"];
  * @throws Redirects to home page if not authenticated
  */
 export async function requireAuth() {
-  const session = await auth.api.getSession({ headers: await headers() });
+  const session = await getOptionalSession();
 
   if (!session) {
     redirect("/");
@@ -32,7 +32,11 @@ export async function requireAuth() {
  * @returns The session object or null
  */
 export async function getOptionalSession() {
-  return await auth.api.getSession({ headers: await headers() });
+  try {
+    return await auth.api.getSession({ headers: await headers() });
+  } catch {
+    return null;
+  }
 }
 
 /**
