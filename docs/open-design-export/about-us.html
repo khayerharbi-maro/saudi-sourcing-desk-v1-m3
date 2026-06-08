@@ -1,0 +1,1331 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>من نحن | HASEEF Global Sourcing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f2ea;
+      --surface: #ffffff;
+      --surface-soft: #faf8f3;
+      --surface-warm: #f7f5ef;
+      --fg: #001f3f;
+      --fg-2: #727788;
+      --muted: #727788;
+      --border: #d7d4ca;
+      --accent: #c5a646;
+      --accent-deep: #b9964b;
+      --accent-on: #001033;
+      --navy: #062744;
+      --navy-deep: #001033;
+      --navy-soft: #001f3f;
+      --cta-green: #164237;
+      --gold-soft: #d8c77a;
+      --success: #727788;
+      --danger: #9d463e;
+      --font-display: "Tajawal", "Avenir Next", "Geeza Pro", system-ui, sans-serif;
+      --font-body: "Tajawal", "Segoe UI", system-ui, sans-serif;
+      --font-latin: "Sora", "Tajawal", sans-serif;
+      --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+      --container: 1180px;
+      --gutter: 28px;
+      --gap-xs: 8px;
+      --gap-sm: 12px;
+      --gap-md: 18px;
+      --gap-lg: 28px;
+      --gap-xl: 42px;
+      --gap-2xl: 72px;
+      --radius: 12px;
+      --radius-lg: 22px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 22px 60px color-mix(in oklab, var(--navy-deep) 10%, transparent);
+      --shadow-card: 0 16px 40px color-mix(in oklab, var(--navy-deep) 10%, transparent);
+      --focus: 0 0 0 4px color-mix(in oklab, var(--accent) 25%, transparent);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 12% 0%, color-mix(in oklab, var(--accent) 7%, transparent), transparent 18rem),
+        linear-gradient(180deg, var(--bg), var(--surface-soft) 24rem, var(--bg) 100%);
+      color: var(--fg);
+      font-family: var(--font-body);
+      line-height: 1.8;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    p, h1, h2, h3, h4 { margin: 0; }
+    p { text-wrap: pretty; }
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+      line-height: 1.08;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+    .container {
+      max-width: var(--container);
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+    }
+    .section { padding-block: clamp(48px, 7vw, var(--gap-2xl)); }
+    .section-soft {
+      background: linear-gradient(180deg, color-mix(in oklab, var(--surface) 90%, transparent), color-mix(in oklab, var(--surface-soft) 92%, transparent));
+      border-block: 1px solid color-mix(in oklab, var(--border) 58%, transparent);
+    }
+    .section-navy {
+      background: linear-gradient(135deg, var(--navy-deep), var(--navy));
+      color: var(--surface);
+    }
+    .section-navy h2,
+    .section-navy h3,
+    .section-navy h4,
+    .section-navy p { color: var(--surface); }
+    .stack { display: grid; gap: var(--gap-md); }
+    .stack-sm { display: grid; gap: var(--gap-sm); }
+    .row { display: flex; align-items: center; gap: var(--gap-sm); flex-wrap: wrap; }
+    .row-between { display: flex; align-items: center; justify-content: space-between; gap: var(--gap-md); flex-wrap: wrap; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap-xl); align-items: center; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap-lg); }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap-md); }
+    .eyebrow {
+      font-family: var(--font-latin);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .eyebrow-light { color: var(--gold-soft); }
+    .lead {
+      max-width: 66ch;
+      color: var(--fg-2);
+      font-size: clamp(17px, 1.8vw, 21px);
+    }
+    .muted { color: var(--muted); }
+    .num {
+      font-family: var(--font-latin);
+      font-variant-numeric: tabular-nums;
+      direction: ltr;
+      display: inline-block;
+    }
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: var(--radius-pill);
+      border: 1px solid transparent;
+      font-weight: 800;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:focus-visible { outline: 0; box-shadow: var(--focus); }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--accent-on);
+      border-color: var(--accent);
+    }
+    .btn-primary:hover { background: var(--gold-soft); border-color: var(--gold-soft); }
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border-color: color-mix(in oklab, var(--navy) 24%, var(--border));
+    }
+    .btn-outline:hover {
+      background: color-mix(in oklab, var(--navy) 8%, white);
+      color: var(--navy-deep);
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 6px 11px;
+      border-radius: var(--radius-pill);
+      border: 1px solid color-mix(in oklab, var(--border) 90%, transparent);
+      background: color-mix(in oklab, var(--surface) 84%, transparent);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .panel,
+    .card,
+    .cover-frame,
+    .quote-box,
+    .info-box,
+    .license-card,
+    .social-card,
+    .story-card {
+      background: var(--surface);
+      border: 1px solid color-mix(in oklab, var(--border) 84%, white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+    }
+    .placeholder-visual {
+      position: relative;
+      overflow: hidden;
+      min-height: 340px;
+      border-radius: calc(var(--radius-lg) + 4px);
+      border: 1px solid color-mix(in oklab, var(--border) 72%, white);
+      background:
+        radial-gradient(circle at 18% 18%, color-mix(in oklab, var(--accent) 15%, transparent), transparent 18rem),
+        linear-gradient(135deg, color-mix(in oklab, var(--navy) 8%, white), color-mix(in oklab, var(--surface-soft) 92%, white));
+    }
+    .placeholder-visual::before,
+    .placeholder-visual::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+      border-radius: 999px;
+      background: color-mix(in oklab, var(--navy) 18%, transparent);
+      opacity: 0.18;
+    }
+    .placeholder-visual::before {
+      width: 180px;
+      height: 180px;
+      top: 18px;
+      right: 20px;
+    }
+    .placeholder-visual::after {
+      width: 260px;
+      height: 260px;
+      bottom: -90px;
+      left: -50px;
+    }
+    .placeholder-grid {
+      position: absolute;
+      inset: 22px;
+      display: grid;
+      gap: 14px;
+      grid-template-columns: 1.3fr 0.7fr;
+      align-content: space-between;
+    }
+    .placeholder-grid .tile {
+      border-radius: 18px;
+      border: 1px solid color-mix(in oklab, var(--border) 70%, white);
+      background:
+        linear-gradient(180deg, color-mix(in oklab, var(--surface) 86%, transparent), color-mix(in oklab, var(--surface-soft) 94%, transparent));
+      min-height: 120px;
+      display: grid;
+      align-content: end;
+      padding: 14px;
+      gap: 8px;
+    }
+    .placeholder-grid .tile strong,
+    .placeholder-grid .tile span {
+      position: relative;
+      z-index: 1;
+    }
+    .placeholder-grid .tile::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border-radius: 14px;
+      border: 1px dashed color-mix(in oklab, var(--accent) 34%, var(--border));
+    }
+    .placeholder-grid .tile:nth-child(1) {
+      grid-row: 1 / span 2;
+      min-height: 254px;
+      background:
+        linear-gradient(180deg, color-mix(in oklab, var(--navy) 6%, white), color-mix(in oklab, var(--surface-soft) 92%, white));
+    }
+    .placeholder-grid .tile:nth-child(2) { background: color-mix(in oklab, var(--surface) 88%, white); }
+    .placeholder-grid .tile:nth-child(3) { background: color-mix(in oklab, var(--surface-soft) 90%, white); }
+    .placeholder-grid .tile strong { font-size: 18px; }
+    .placeholder-grid .tile span { color: var(--muted); font-size: 13px; line-height: 1.4; }
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding-block: 14px 12px;
+      background: linear-gradient(180deg, color-mix(in oklab, var(--navy-deep) 95%, transparent), color-mix(in oklab, var(--navy-deep) 85%, transparent));
+    }
+    .topnav-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--gap-md);
+      padding: 0 18px;
+      border: 1px solid color-mix(in oklab, var(--surface) 14%, transparent);
+      border-radius: var(--radius-pill);
+      background: color-mix(in oklab, var(--navy-deep) 86%, transparent);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 46px color-mix(in oklab, var(--navy-deep) 34%, transparent);
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--surface);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .logo-mark {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 24%, color-mix(in oklab, var(--accent) 28%, var(--navy-soft)), var(--navy-deep) 66%);
+      color: var(--surface);
+      box-shadow: 0 12px 28px color-mix(in oklab, var(--navy-deep) 44%, transparent);
+      overflow: hidden;
+    }
+    .brand-mark-svg {
+      width: 72%;
+      height: 72%;
+    }
+    .logo-copy {
+      display: grid;
+      gap: 1px;
+      line-height: 1.1;
+    }
+    .logo-name {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+    }
+    .logo-copy small {
+      color: color-mix(in oklab, var(--surface) 68%, transparent);
+      font-family: var(--font-latin);
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: color-mix(in oklab, var(--surface) 74%, transparent);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .nav-links a,
+    .nav-trigger {
+      position: relative;
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 13px;
+      border: 0;
+      border-radius: var(--radius-pill);
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      font-weight: 800;
+      line-height: 1;
+      transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+    }
+    .nav-service { position: relative; }
+    .nav-trigger::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-inline-start: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(-45deg) translateY(-1px);
+      opacity: 0.75;
+      transition: transform 180ms ease;
+    }
+    .nav-service:hover .nav-trigger,
+    .nav-service.is-open .nav-trigger,
+    .nav-trigger:focus-visible,
+    .nav-links a:hover,
+    .nav-links a.is-active {
+      color: var(--surface);
+      background: color-mix(in oklab, var(--accent) 18%, transparent);
+      transform: translateY(-1px);
+      outline: 0;
+    }
+    .nav-service.is-open .nav-trigger::before,
+    .nav-service:hover .nav-trigger::before { transform: rotate(135deg) translateY(1px); }
+    .services-dropdown {
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      width: min(310px, 78vw);
+      padding: 10px;
+      border: 1px solid color-mix(in oklab, var(--accent) 20%, var(--surface));
+      border-radius: 20px;
+      background: color-mix(in oklab, var(--navy-deep) 96%, transparent);
+      box-shadow: 0 24px 62px color-mix(in oklab, var(--navy-deep) 52%, transparent);
+      opacity: 0;
+      transform: translateY(-8px) scale(0.98);
+      pointer-events: none;
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+    .nav-service:hover .services-dropdown,
+    .nav-service.is-open .services-dropdown,
+    .nav-service:focus-within .services-dropdown {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+    .services-dropdown a {
+      display: grid;
+      gap: 3px;
+      padding: 12px 13px;
+      border-radius: 14px;
+      color: color-mix(in oklab, var(--surface) 86%, transparent);
+      white-space: normal;
+    }
+    .services-dropdown a strong { color: var(--surface); font-size: 14px; }
+    .services-dropdown a span {
+      color: color-mix(in oklab, var(--surface) 58%, transparent);
+      font-family: var(--font-latin);
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .services-dropdown a:hover,
+    .services-dropdown a.is-active {
+      color: var(--surface);
+      background: color-mix(in oklab, var(--accent) 16%, transparent);
+    }
+    .menu-button { display: none; }
+    .menu-button {
+      width: 48px;
+      height: 48px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: color-mix(in oklab, var(--surface) 8%, transparent);
+      display: none;
+      place-items: center;
+    }
+    .menu-button span {
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--surface);
+      display: block;
+      margin: 2px 0;
+    }
+    .hero {
+      position: relative;
+      padding-block: clamp(58px, 8vw, 104px);
+      overflow: hidden;
+    }
+    .hero-inner {
+      display: grid;
+      gap: var(--gap-xl);
+      align-items: center;
+    }
+    .hero-copy {
+      display: grid;
+      gap: var(--gap-md);
+      align-content: start;
+    }
+    .hero h1 {
+      max-width: 13ch;
+      font-size: clamp(40px, 6vw, 76px);
+    }
+    .hero .lead { max-width: 58ch; }
+    .hero-visual {
+      position: relative;
+      display: grid;
+      gap: 14px;
+      padding: 18px;
+      border-radius: 30px;
+      background: linear-gradient(180deg, color-mix(in oklab, var(--surface) 92%, transparent), color-mix(in oklab, var(--surface-soft) 94%, transparent));
+      border: 1px solid color-mix(in oklab, var(--border) 70%, white);
+      box-shadow: var(--shadow-soft);
+    }
+    .hero-visual .visual-copy {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+      min-height: 250px;
+      padding: 20px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 18% 18%, color-mix(in oklab, var(--accent) 18%, transparent), transparent 12rem),
+        linear-gradient(135deg, color-mix(in oklab, var(--navy) 9%, white), color-mix(in oklab, var(--surface-soft) 94%, white));
+    }
+    .hero-visual .route {
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: color-mix(in oklab, var(--navy) 10%, white);
+      color: var(--navy);
+      font-family: var(--font-latin);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+    .hero-visual .route-line {
+      margin-top: auto;
+      display: grid;
+      gap: 10px;
+    }
+    .route-line .line {
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--navy), var(--accent), var(--cta-green));
+    }
+    .route-line .pins {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .metric {
+      min-height: 88px;
+      display: grid;
+      gap: 6px;
+      padding: 16px;
+      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid color-mix(in oklab, var(--border) 82%, white);
+    }
+    .metric strong {
+      font-family: var(--font-latin);
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .metric span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .brochure-grid {
+      gap: var(--gap-lg);
+      align-items: stretch;
+    }
+    .brochure-copy,
+    .section-copy {
+      display: grid;
+      gap: var(--gap-md);
+    }
+    .card {
+      padding: clamp(18px, 2.4vw, 28px);
+    }
+    .brochure-card {
+      display: grid;
+      gap: 18px;
+      align-content: space-between;
+      min-height: 100%;
+    }
+    .brochure-cover {
+      min-height: 270px;
+      display: grid;
+      align-content: end;
+      padding: 18px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 76% 20%, color-mix(in oklab, var(--accent) 14%, transparent), transparent 10rem),
+        linear-gradient(145deg, color-mix(in oklab, var(--navy) 90%, white), color-mix(in oklab, var(--navy-soft) 82%, white));
+      color: var(--surface);
+    }
+    .brochure-cover .cover-tag {
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: color-mix(in oklab, var(--surface) 14%, transparent);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .brochure-cover .cover-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .brochure-cover .cover-grid .mini {
+      min-height: 94px;
+      border-radius: 16px;
+      border: 1px solid color-mix(in oklab, var(--surface) 16%, transparent);
+      background: color-mix(in oklab, var(--surface) 8%, transparent);
+    }
+    .section-title {
+      font-size: clamp(26px, 3.5vw, 44px);
+    }
+    .feature-list { align-items: stretch; }
+    .feature-card {
+      display: grid;
+      gap: 12px;
+      min-height: 100%;
+    }
+    .feature-card .feature-index {
+      width: fit-content;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: color-mix(in oklab, var(--accent) 14%, white);
+      color: var(--navy);
+      font-family: var(--font-latin);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .feature-card h3 { font-size: clamp(22px, 2.4vw, 29px); }
+    .feature-card .feature-text { color: var(--fg-2); }
+    .feature-card a {
+      width: fit-content;
+      color: var(--navy);
+      font-weight: 800;
+    }
+    .social-band {
+      display: grid;
+      gap: var(--gap-lg);
+    }
+    .social-head {
+      display: grid;
+      gap: 10px;
+      max-width: 56rem;
+    }
+    .followers {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 5vw, 66px);
+      font-weight: 900;
+      color: var(--surface);
+    }
+    .social-grid { align-items: stretch; }
+    .social-card {
+      min-height: 164px;
+      display: grid;
+      gap: 14px;
+      padding: 22px;
+    }
+    .social-card .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: color-mix(in oklab, var(--navy) 9%, white);
+      color: var(--navy);
+      font-weight: 900;
+      font-family: var(--font-latin);
+    }
+    .social-card strong { font-size: 20px; }
+    .social-card span { color: var(--muted); }
+    .stories-head {
+      display: grid;
+      gap: 10px;
+      margin-bottom: var(--gap-lg);
+    }
+    .story-card {
+      display: grid;
+      gap: 12px;
+      min-height: 100%;
+    }
+    .story-kicker {
+      width: fit-content;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: color-mix(in oklab, var(--navy) 8%, white);
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .story-card p { color: var(--fg-2); }
+    .facility-layout {
+      display: grid;
+      gap: var(--gap-lg);
+    }
+    .facility-layout .placeholder-visual {
+      min-height: 260px;
+    }
+    .facility-text {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+    .license-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--gap-lg);
+    }
+    .license-card {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+    .license-card .doc {
+      min-height: 160px;
+      border-radius: 18px;
+      border: 1px solid color-mix(in oklab, var(--border) 80%, white);
+      background:
+        linear-gradient(180deg, color-mix(in oklab, var(--surface) 92%, white), color-mix(in oklab, var(--surface-soft) 94%, white));
+      padding: 18px;
+      display: grid;
+      gap: 10px;
+    }
+    .license-card .doc span {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-family: var(--font-latin);
+    }
+    .license-card .doc strong { font-size: 22px; }
+    .address-box {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+    }
+    .address-panel {
+      padding: 20px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 82% 18%, color-mix(in oklab, var(--accent) 10%, transparent), transparent 10rem),
+        linear-gradient(135deg, color-mix(in oklab, var(--navy) 94%, white), color-mix(in oklab, var(--navy-soft) 84%, white));
+      color: var(--surface);
+    }
+    .address-panel p,
+    .address-panel .muted { color: color-mix(in oklab, var(--surface) 78%, transparent); }
+    .address-block {
+      padding: 18px;
+      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid color-mix(in oklab, var(--border) 84%, white);
+    }
+    .cta-box {
+      display: grid;
+      gap: 16px;
+      align-items: center;
+      justify-items: start;
+    }
+    .footer {
+      background: linear-gradient(135deg, var(--navy-deep), var(--navy));
+      color: var(--surface);
+      padding-block: clamp(46px, 7vw, 78px) 28px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr repeat(3, 0.8fr);
+      gap: var(--gap-lg);
+      align-items: start;
+    }
+    .footer-brand { display: grid; gap: 16px; max-width: 360px; }
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--surface);
+      font-size: 26px;
+      line-height: 1.1;
+    }
+    .footer-logo .logo-mark { width: 58px; height: 58px; }
+    .footer-logo-text { display: grid; gap: 3px; line-height: 1.1; }
+    .footer-logo-name {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+    }
+    .footer-logo-en {
+      font-family: var(--font-latin);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      color: color-mix(in oklab, var(--surface) 70%, transparent);
+      text-transform: uppercase;
+    }
+    .footer-logo-tag {
+      color: color-mix(in oklab, var(--surface) 62%, transparent);
+      font-size: 13px;
+    }
+    .footer-brand p { margin: 0; color: color-mix(in oklab, var(--surface) 72%, transparent); }
+    .footer-col h3 {
+      margin-bottom: 16px;
+      font-size: 18px;
+      color: var(--surface);
+    }
+    .footer-links {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links a,
+    .footer-links span { color: color-mix(in oklab, var(--surface) 70%, transparent); }
+    .footer-links a:hover { color: var(--gold-soft); }
+    .footer-bottom {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid color-mix(in oklab, var(--surface) 15%, transparent);
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      color: color-mix(in oklab, var(--surface) 64%, transparent);
+      font-size: 13px;
+    }
+    .about-link-current {
+      color: var(--surface);
+      background: color-mix(in oklab, var(--accent) 18%, transparent);
+    }
+    .mobile-only { display: none; }
+    @media (max-width: 1080px) {
+      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .license-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 920px) {
+      .topnav-inner { padding-inline: 14px; }
+      .menu-button { display: grid; }
+      .nav-links {
+        position: fixed;
+        inset: 92px 14px auto 14px;
+        display: grid;
+        gap: 8px;
+        padding: 14px;
+        border-radius: 24px;
+        border: 1px solid color-mix(in oklab, var(--surface) 16%, transparent);
+        background: color-mix(in oklab, var(--navy-deep) 94%, transparent);
+        box-shadow: 0 30px 70px color-mix(in oklab, var(--navy-deep) 44%, transparent);
+        transform: translateY(-8px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 180ms ease, transform 180ms ease;
+        z-index: 60;
+        max-height: calc(100vh - 120px);
+        overflow: auto;
+      }
+      body.menu-open .nav-links {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+      .nav-links a,
+      .nav-trigger { width: 100%; justify-content: space-between; }
+      .nav-service { width: 100%; }
+      .services-dropdown {
+        position: static;
+        width: 100%;
+        margin-top: 8px;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 10px;
+        border-radius: 18px;
+      }
+      .nav-service.is-open .services-dropdown {
+        max-height: 380px;
+        padding: 10px;
+      }
+      .hero-inner,
+      .grid-2 { grid-template-columns: 1fr; }
+      .hero h1 { max-width: 100%; }
+      .hero-visual { order: -1; }
+      .social-grid,
+      .stories-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+      .container { padding-inline: 16px; }
+      .section { padding-block: 42px; }
+      .grid-3,
+      .grid-4,
+      .social-grid,
+      .stories-grid { grid-template-columns: 1fr; }
+      .hero { padding-block: 42px 54px; }
+      .hero h1 { font-size: clamp(34px, 10vw, 52px); }
+      .hero-metrics { grid-template-columns: 1fr; }
+      .placeholder-grid { grid-template-columns: 1fr; inset: 16px; }
+      .placeholder-grid .tile:nth-child(1) { grid-row: auto; min-height: 170px; }
+      .brochure-cover .cover-grid { grid-template-columns: 1fr; }
+      .mobile-only { display: inline; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topnav">
+    <div class="container topnav-inner">
+      <a class="logo" href="landing.html" aria-label="HASEEF Global Sourcing — حصيف">
+        <span class="logo-mark" aria-hidden="true">
+          <svg class="brand-mark-svg" viewBox="0 0 64 64" role="img">
+            <path d="M34 11c-10 2-18 10-20 20 7-5 16-7 27-6-5 4-9 9-11 16 9-2 17-8 22-18-4 0-8-1-12-3 6-1 10-4 13-9-6 2-12 2-19 0Z" fill="currentColor"/>
+            <path d="M17 40c9 7 22 7 31 0" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="46" cy="23" r="3" fill="var(--accent)" />
+          </svg>
+        </span>
+        <span class="logo-copy">
+          <span class="logo-name">حصيف</span>
+          <small>HASEEF SOURCING</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="روابط الصفحة">
+        <a href="landing.html">الرئيسية</a>
+        <div class="nav-service">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="about-services-menu">خدماتنا</button>
+          <div class="services-dropdown" id="about-services-menu" role="menu" aria-label="خدماتنا">
+            <a href="pricing.html" role="menuitem">
+              <strong>التوريد والشراء</strong>
+              <span>Sourcing</span>
+            </a>
+            <a href="extra-services.html" role="menuitem">
+              <strong>الخدمات الإضافية</strong>
+              <span>Extra Services</span>
+            </a>
+            <a href="quality-control.html" role="menuitem">
+              <strong>فحص الجودة</strong>
+              <span>Quality Control</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-service">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="about-solutions-menu">الحلول</button>
+          <div class="services-dropdown" id="about-solutions-menu" role="menu" aria-label="الحلول">
+            <a href="private-label.html" role="menuitem"><strong>Private Label Product Development</strong><span>Private Label</span></a>
+            <a href="product-development.html" role="menuitem"><strong>Product Development</strong><span>Product Development</span></a>
+            <a href="shipping-solution.html" role="menuitem"><strong>Shipping Solution</strong><span>Shipping</span></a>
+            <a href="credit-payment-terms.html" role="menuitem"><strong>Credit Payment Terms</strong><span>Credit</span></a>
+            <a href="affiliate-program.html" role="menuitem"><strong>Affiliate Program</strong><span>Affiliate</span></a>
+          </div>
+        </div>
+        <div class="nav-service">
+          <button class="nav-trigger about-link-current" type="button" aria-expanded="false" aria-controls="about-about-menu">من نحن</button>
+          <div class="services-dropdown" id="about-about-menu" role="menu" aria-label="من نحن">
+            <a href="about-us.html" class="is-active" role="menuitem" aria-current="page">
+              <strong>About Us</strong>
+              <span>من نحن</span>
+            </a>
+            <a href="about-founder.html" role="menuitem">
+              <strong>About Founder</strong>
+              <span>المؤسس</span>
+            </a>
+            <a href="payment-information.html" role="menuitem">
+              <strong>Payment Information</strong>
+              <span>معلومات الدفع</span>
+            </a>
+          </div>
+        </div>
+        <a href="our-products.html">المنتجات</a>
+      </nav>
+      <button class="menu-button" type="button" aria-label="فتح القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero section" data-od-id="hero">
+      <div class="container hero-inner grid-2">
+        <div class="hero-copy">
+          <p class="eyebrow">من نحن</p>
+          <h1>شريكك الموثوق في التوريد من الصين</h1>
+          <div class="stack">
+            <p class="lead">HASEEF تأسست على يد Jing في ييوو، الصين، عام 2015، ونمت لتصبح فريقًا يضم أكثر من <span class="num">200</span> محترف. تركيزنا الوحيد هو تبسيط عملية التوريد للشركات التي ترغب في الاستيراد من الصين.</p>
+            <p class="lead">على مرّ السنوات، وثق بنا أكثر من <span class="num">5,000</span> شركة صغيرة ومتوسطة للحصول على خدمات توريد متكاملة، من البحث عن الموردين إلى الشحن من الباب إلى الباب. اليوم، يعمل <span class="num">70%</span> من عملائنا في التجارة الإلكترونية، ويتم تصدير <span class="num">70%</span> من المنتجات التي نورّدها إلى أمريكا الشمالية وأوروبا.</p>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="صورة/visual بديل للهوية">
+          <div class="visual-copy">
+            <span class="route">HASEEF · CHINA TO KSA</span>
+            <div class="placeholder-grid">
+              <div class="tile">
+                <strong>حركة التوريد</strong>
+                <span>مسار رمزي بين المورد، الفحص، والشحن.</span>
+              </div>
+              <div class="tile">
+                <strong>الفريق</strong>
+                <span>محترفـون في التوريد والمتابعة والتجهيز.</span>
+              </div>
+              <div class="tile">
+                <strong>الدعم</strong>
+                <span>خدمات متكاملة من المصدر إلى التسليم.</span>
+              </div>
+            </div>
+            <div class="route-line">
+              <div class="line" aria-hidden="true"></div>
+              <div class="pins">
+                <span>ييوو</span>
+                <span>فحص</span>
+                <span>من الباب إلى الباب</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric"><strong class="num">2015</strong><span>سنة التأسيس في ييوو</span></div>
+            <div class="metric"><strong class="num">200+</strong><span>محترف داخل الفريق</span></div>
+            <div class="metric"><strong class="num">5,000+</strong><span>شركة صغيرة ومتوسطة وثقت بنا</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" data-od-id="brochure">
+      <div class="container grid-2 brochure-grid">
+        <div class="brochure-copy">
+          <p class="eyebrow">حمّل بروشور الشركة</p>
+          <h2 class="section-title">حمّل بروشور الشركة</h2>
+          <p class="lead">احصل على نظرة سريعة على خدمات التوريد، وسير العمل، وموارد المصانع، وحالات العملاء الحقيقية — كلها في بروشور واحد.</p>
+          <div class="row">
+            <a class="btn btn-primary" href="#">تحميل</a>
+          </div>
+        </div>
+        <div class="card brochure-card">
+          <div class="brochure-cover" aria-hidden="true">
+            <span class="cover-tag">بروشور الشركة</span>
+            <div class="cover-grid">
+              <div class="mini"></div>
+              <div class="mini"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-od-id="unique">
+      <div class="container stack">
+        <div class="section-copy">
+          <p class="eyebrow">ما الذي يميزنا؟</p>
+          <h2 class="section-title">ما الذي يميزنا؟</h2>
+        </div>
+        <div class="grid-3 feature-list">
+          <article class="card feature-card">
+            <span class="feature-index">01</span>
+            <h3>أسعار تنافسية</h3>
+            <p class="feature-text">نحن نشجع عملاءنا دائمًا على مقارنة عروض الأسعار التي نقدمها بالعروض التي يحصلون عليها من موردين آخرين قبل اختيار خطط خدماتنا. أكثر من <span class="num">90%</span> منهم يختارون <a href="pricing.html#pro">Pro Plan</a> لأننا نقدم باستمرار الأسعار الأكثر تنافسية.</p>
+          </article>
+          <article class="card feature-card">
+            <span class="feature-index">02</span>
+            <h3>ضمان الجودة</h3>
+            <p class="feature-text">نولي أهمية كبيرة لجودة المنتجات. نقوم بإجراء فحوصات دقيقة للمنتجات قبل شحنها. ونحن شركة التوريد الوحيدة التي تقدم فحص المنتجات قطعة بقطعة لتقليل معدل العيوب إلى <span class="num">0</span>.</p>
+          </article>
+          <article class="card feature-card">
+            <span class="feature-index">03</span>
+            <h3>قسم إنتاج داخلي</h3>
+            <p class="feature-text">رغم أننا شركة توريد، لدينا قسم إنتاج داخلي قادر على التعامل مع مهام لا تستطيع العديد من المصانع القيام بها أو لا ترغب في تنفيذها. تشمل هذه المهام إعادة تغليف المنتجات، وتجميع المنتجات، وتجهيز التجارة الإلكترونية، والدروبشيبينغ، وخدمات تنفيذ الطلبات.</p>
+          </article>
+          <article class="card feature-card">
+            <span class="feature-index">04</span>
+            <h3>فريق توريد محترف</h3>
+            <p class="feature-text">تضم شركتنا أكثر من <span class="num">100</span> موظف، لدى كل منهم سنوات من الخبرة في التوريد من الصين عبر مجموعة واسعة من المنتجات. في المقابل، يمتلك معظم وكلاء التوريد الآخرين فرقًا أصغر تقل عن <span class="num">10</span> أشخاص، مع خبرة محدودة في فئات محددة.</p>
+          </article>
+          <article class="card feature-card">
+            <span class="feature-index">05</span>
+            <h3>دعم خاص للشركات النامية</h3>
+            <p class="feature-text">بالنسبة للشركات الكبيرة أو سريعة النمو، نقدم مجموعة من الخدمات الإضافية المصممة حسب الحاجة. يشمل ذلك تخصيص فريق يصل إلى <span class="num">20</span> شخصًا، وتقديم خيارات الدفع الائتماني، وغير ذلك.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-navy" data-od-id="social">
+      <div class="container social-band">
+        <div class="social-head">
+          <p class="eyebrow eyebrow-light">تابعنا على وسائل التواصل الاجتماعي</p>
+          <h2 class="section-title">تابعنا على وسائل التواصل الاجتماعي</h2>
+          <p class="lead">نحن نشطون باستمرار على وسائل التواصل الاجتماعي، حيث نشارك المعرفة حول التوريد، والتجارة الدولية، والتجارة الإلكترونية، والمزيد.</p>
+          <div class="followers">أكثر من <span class="num">500</span> ألف متابع</div>
+        </div>
+        <div class="grid-3 social-grid">
+          <a class="social-card" href="#" aria-label="HASEEF على TikTok">
+            <span class="icon">TT</span>
+            <strong>HASEEF</strong>
+            <span>#</span>
+          </a>
+          <a class="social-card" href="#" aria-label="HASEEF على TikTok">
+            <span class="icon">TT</span>
+            <strong>HASEEF</strong>
+            <span>#</span>
+          </a>
+          <a class="social-card" href="#" aria-label="HASEEF على Instagram">
+            <span class="icon">IG</span>
+            <strong>HASEEF</strong>
+            <span>#</span>
+          </a>
+          <a class="social-card" href="#" aria-label="HASEEF على Instagram">
+            <span class="icon">IG</span>
+            <strong>HASEEF</strong>
+            <span>#</span>
+          </a>
+          <a class="social-card" href="#" aria-label="HASEEF على YouTube">
+            <span class="icon">YT</span>
+            <strong>HASEEF</strong>
+            <span>#</span>
+          </a>
+          <a class="social-card" href="#" aria-label="HASEEF على Facebook">
+            <span class="icon">FB</span>
+            <strong>HASEEF</strong>
+            <span>#</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-od-id="stories">
+      <div class="container">
+        <div class="stories-head">
+          <p class="eyebrow">قصص نجاح</p>
+          <h2 class="section-title">قصص نجاح</h2>
+        </div>
+        <div class="grid-2 stories-grid">
+          <article class="story-card card">
+            <span class="story-kicker">Steve Chou</span>
+            <p>Steve Chou، مؤسس MyWifeQuitHerJob، وهي منصة تعليمية ملهمة عبر الإنترنت، هو أيضًا بائع بمبيعات مليونية. وثق بنا لنكون شريكه في التوريد لمستلزمات حفلات الزفاف، كما أوصى بنا بشدة لجمهوره.</p>
+          </article>
+          <article class="story-card card">
+            <span class="story-kicker">Amazon Aggregators</span>
+            <p>قامت شركات تجميع التجارة الإلكترونية، بما في ذلك واحدة من أكبر شركات تجميع Amazon، بتوظيفنا للعثور على موردين جدد وإدارة سلسلة التوريد لبعض متاجرها المستحوذ عليها. (تقوم شركات التجميع بالاستحواذ على بائعي التجارة الإلكترونية الناجحين ودمجهم لتحقيق وفورات الحجم.)</p>
+          </article>
+          <article class="story-card card">
+            <span class="story-kicker">BabyBlendy</span>
+            <p>BabyBlendy هي شركة مبتكرة لزجاجات الأطفال. نحن الدعم الذي يقف خلف زجاجتهم الكهربائية الثورية التي تحتوي على خلاط مدمج حاصل على براءة اختراع، مما يضمن تغذية مريحة وفعالة. تولّينا أعمال الرسم الأولي، والإنتاج الضخم، والتغليف.</p>
+          </article>
+          <article class="story-card card">
+            <span class="story-kicker">Large eCommerce Brands</span>
+            <p>تختارنا العديد من شركات التجارة الإلكترونية الراسخة كحل لسلسلة التوريد الخاصة بها بسبب العدد الكبير من وحدات SKU لديها. هذه الشركات، من دول مثل الولايات المتحدة، والمجر، وليتوانيا، وجمهورية التشيك، تقوم بمشتريات سنوية بقيمة ملايين الدولارات.</p>
+          </article>
+          <article class="story-card card">
+            <span class="story-kicker">Private Label Mastery</span>
+            <p>كما أن مؤسسات التعليم المتخصصة في التجارة الإلكترونية مثل Private Label Mastery وRainmaker هي من شركائنا على المدى الطويل. نساعد طلابهم على إطلاق أعمالهم بمخاطر أقل ونمو أسرع.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" data-od-id="office">
+      <div class="container facility-layout grid-2">
+        <div class="facility-text">
+          <p class="eyebrow">مكتبنا</p>
+          <h2 class="section-title">مكتبنا</h2>
+        </div>
+        <div class="placeholder-visual" aria-hidden="true">
+          <div class="placeholder-grid">
+            <div class="tile"><strong>مساحة المكتب</strong><span>مكان مخصص</span></div>
+            <div class="tile"><strong>استقبال</strong><span>مكان مخصص</span></div>
+            <div class="tile"><strong>غرفة متابعة</strong><span>مكان مخصص</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-od-id="warehouse">
+      <div class="container facility-layout grid-2">
+        <div class="placeholder-visual" aria-hidden="true">
+          <div class="placeholder-grid">
+            <div class="tile"><strong>المستودع</strong><span>مكان مخصص</span></div>
+            <div class="tile"><strong>تجميع</strong><span>مكان مخصص</span></div>
+            <div class="tile"><strong>فحص</strong><span>مكان مخصص</span></div>
+          </div>
+        </div>
+        <div class="facility-text">
+          <p class="eyebrow">مستودعنا</p>
+          <h2 class="section-title">مستودعنا</h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" data-od-id="license">
+      <div class="container stack">
+        <div class="section-copy">
+          <p class="eyebrow">تراخيصنا</p>
+          <h2 class="section-title">تراخيصنا</h2>
+        </div>
+        <div class="grid-2 license-grid">
+          <article class="license-card card">
+            <div class="doc">
+              <span>Business License</span>
+              <strong>رخصة النشاط</strong>
+            </div>
+          </article>
+          <article class="license-card card">
+            <div class="doc">
+              <span>Export License</span>
+              <strong>رخصة التصدير</strong>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-od-id="address">
+      <div class="container grid-2">
+        <div class="address-box">
+          <p class="eyebrow">عنواننا</p>
+          <h2 class="section-title">عنواننا</h2>
+          <p class="lead">نرحب بزيارتكم لنا في الصين؛ مكتبنا يقع مباشرة أمام سوق ييوو. ويمكنكم أيضًا إرسال عينات المنتجات إلى العنوان أدناه إذا لزم الأمر:</p>
+        </div>
+        <div class="address-panel">
+          <p>Room 1701, 628 Chengxin Ave, Yiwu, Zhejiang, China 322000</p>
+          <p class="muted">地址：浙江省义乌市诚信大道628号1701室</p>
+          <p class="muted">邮编：322000</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-navy" data-od-id="cta">
+      <div class="container cta-box">
+        <p class="eyebrow eyebrow-light">هل تريد أن تنمّي أعمالك؟</p>
+        <h2 class="section-title">هل تريد أن تنمّي أعمالك؟</h2>
+        <div class="row">
+          <a class="btn btn-primary" href="start-sourcing-request.html#inquiry">تواصل معنا</a>
+          <a class="btn btn-outline" href="landing.html#services">اعرف التفاصيل</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" data-od-id="contact">
+      <div class="container grid-2">
+        <article class="card stack">
+          <p class="eyebrow">اتصل بنا</p>
+          <h2 class="section-title">اتصل بنا</h2>
+          <div class="stack-sm">
+            <p>البريد الإلكتروني: <a href="mailto:[email&#160;protected]">[email&#160;protected]</a></p>
+            <p>الهاتف: <a href="tel:+18053011888">+1 805 3011888</a></p>
+            <p>للاتصال من خارج الصين</p>
+            <p><a href="tel:+864009060006">+86 400 9060006</a></p>
+            <p>للاتصال من الصين</p>
+          </div>
+        </article>
+        <article class="card stack">
+          <p class="eyebrow">ساعات العمل</p>
+          <h2 class="section-title">ساعات العمل</h2>
+          <div class="stack-sm">
+            <p>من الإثنين إلى الجمعة</p>
+            <p>9:00 صباحًا – 6:00 مساءً</p>
+            <p>السبت</p>
+            <p>9:00 صباحًا – 4:00 مساءً</p>
+            <p>توقيت الصين القياسي</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="footer-logo" href="landing.html" aria-label="HASEEF Global Sourcing — حصيف">
+            <span class="logo-mark" aria-hidden="true">
+              <svg class="brand-mark-svg" viewBox="0 0 64 64" role="img">
+                <path d="M34 11c-10 2-18 10-20 20 7-5 16-7 27-6-5 4-9 9-11 16 9-2 17-8 22-18-4 0-8-1-12-3 6-1 10-4 13-9-6 2-12 2-19 0Z" fill="currentColor"/>
+                <path d="M17 40c9 7 22 7 31 0" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="46" cy="23" r="3" fill="var(--accent)" />
+              </svg>
+            </span>
+            <span class="footer-logo-text">
+              <span class="footer-logo-name">حصيف</span>
+              <span class="footer-logo-en">HASEEF SOURCING</span>
+              <span class="footer-logo-tag">جدة · مكة · الرياض</span>
+            </span>
+          </a>
+          <p>مكتب دعم استيراد من الصين للتجار السعوديين: بحث موردين، فحص جودة، متابعة إنتاج، وتجهيز شحن.</p>
+          <div class="row">
+            <span class="pill">جدة</span>
+            <span class="pill">مكة</span>
+            <span class="pill">الرياض</span>
+            <span class="pill">واتساب أولاً</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>القائمة الرئيسية</h3>
+          <ul class="footer-links">
+            <li><a href="landing.html">الرئيسية</a></li>
+            <li><a href="about-us.html">من نحن</a></li>
+            <li><a href="our-products.html">المنتجات</a></li>
+            <li><a href="landing.html#services">الخدمات</a></li>
+            <li><a href="landing.html#faq">الأسئلة المتكررة</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>خدماتنا</h3>
+          <ul class="footer-links">
+            <li><a href="pricing.html">التوريد والشراء</a></li>
+            <li><a href="quality-control.html">فحص الجودة</a></li>
+            <li><a href="shipping-solution.html">حلول الشحن</a></li>
+            <li><a href="product-development.html">تطوير المنتجات</a></li>
+            <li><a href="extra-services.html">الخدمات الإضافية</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>الحلول</h3>
+          <ul class="footer-links">
+            <li><a href="private-label.html">Private Label</a></li>
+            <li><a href="credit-payment-terms.html">Credit Payment Terms</a></li>
+            <li><a href="affiliate-program.html">Affiliate Program</a></li>
+            <li><a href="start-sourcing-request.html#inquiry">ابدأ طلبك</a></li>
+            <li><a href="landing.html#whatsapp">واتساب</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© حصيف · HASEEF Global Sourcing.</span>
+        <span>China sourcing support for Saudi importers and wholesalers.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('.nav-links');
+    const navMenus = Array.from(document.querySelectorAll('.nav-service'));
+
+    const closeMenus = () => {
+      navMenus.forEach((menu) => {
+        menu.classList.remove('is-open');
+        menu.querySelector('.nav-trigger')?.setAttribute('aria-expanded', 'false');
+      });
+    };
+
+    menuButton?.addEventListener('click', () => {
+      const open = document.body.classList.toggle('menu-open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      if (!open) closeMenus();
+    });
+
+    navMenus.forEach((menu) => {
+      const trigger = menu.querySelector('.nav-trigger');
+      trigger?.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const isOpen = menu.classList.toggle('is-open');
+        trigger.setAttribute('aria-expanded', String(isOpen));
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.topnav-inner')) {
+        closeMenus();
+        if (document.body.classList.contains('menu-open')) {
+          document.body.classList.remove('menu-open');
+          menuButton?.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        document.body.classList.remove('menu-open');
+        menuButton?.setAttribute('aria-expanded', 'false');
+        closeMenus();
+      }
+    });
+
+    navLinks?.querySelectorAll('a')?.forEach((link) => {
+      link.addEventListener('click', () => {
+        document.body.classList.remove('menu-open');
+        menuButton?.setAttribute('aria-expanded', 'false');
+        closeMenus();
+      });
+    });
+  </script>
+</body>
+</html>

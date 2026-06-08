@@ -1,0 +1,1063 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>حلول الشحن وتجميع البضائع | HASEEF Global Sourcing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #062744;
+      --surface: #FFFFFF;
+      --surface-warm: #F7F5EF;
+      --surface-soft: color-mix(in oklab, #F7F5EF 86%, #FFFFFF);
+      --fg: #001F3F;
+      --fg-2: #727788;
+      --muted: #727788;
+      --border: color-mix(in oklab, #727788 28%, #FFFFFF);
+      --accent: #C5A646;
+      --accent-deep: #B9964B;
+      --accent-on: #001033;
+      --cta-green: #164237;
+      --cta-green-soft: #E8F2EC;
+      --navy: #062744;
+      --navy-deep: #001033;
+      --navy-soft: #001F3F;
+      --gold: #C5A646;
+      --gold-soft: #D8C77A;
+      --font-display: "Tajawal", "Avenir Next", "Geeza Pro", system-ui, sans-serif;
+      --font-body: "Tajawal", "Segoe UI", system-ui, sans-serif;
+      --font-latin: "Sora", "Tajawal", sans-serif;
+      --container: 1180px;
+      --gutter: 30px;
+      --gap-xs: 8px;
+      --gap-sm: 12px;
+      --gap-md: 20px;
+      --gap-lg: 34px;
+      --gap-xl: 58px;
+      --radius: 12px;
+      --radius-lg: 24px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 30px 86px color-mix(in oklab, var(--navy-deep) 42%, transparent);
+      --shadow-card: 0 18px 48px color-mix(in oklab, var(--navy-deep) 16%, transparent);
+      --focus: 0 0 0 4px color-mix(in oklab, var(--accent) 32%, transparent);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html {
+      -webkit-text-size-adjust: 100%;
+      scroll-padding-top: 120px;
+      background: var(--navy-deep);
+      overflow-x: hidden;
+    }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 12% 0%, color-mix(in oklab, var(--accent) 9%, transparent), transparent 24rem),
+        linear-gradient(180deg, var(--navy-deep), var(--navy) 28rem, var(--surface-warm) 28rem);
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.72;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.menu-open { overflow: hidden; }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 25;
+      pointer-events: none;
+      background: color-mix(in oklab, var(--navy) 38%, transparent);
+      backdrop-filter: blur(5px);
+      opacity: 0;
+      transition: opacity 220ms ease;
+    }
+    body.menu-open::before {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+    .container {
+      width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+      margin-inline: auto;
+    }
+    .stack { display: grid; gap: var(--gap-md); }
+    .num, .latin { direction: ltr; display: inline-block; font-family: var(--font-latin); }
+
+    .topnav {
+      position: sticky !important;
+      top: 0;
+      inset-inline: 0;
+      width: 100%;
+      z-index: 1000;
+      padding-block: max(12px, env(safe-area-inset-top)) 12px;
+      background: var(--navy-deep) !important;
+      border: 0 !important;
+      box-shadow: none;
+      overflow: visible;
+      isolation: isolate;
+    }
+    .topnav::before {
+      content: "";
+      position: absolute;
+      inset-inline: 0;
+      top: -80px;
+      height: 80px;
+      background: var(--navy-deep);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .topnav.is-scrolled {
+      padding-block: max(12px, env(safe-area-inset-top)) 12px;
+      background: var(--navy-deep) !important;
+      box-shadow: 0 12px 28px color-mix(in oklab, var(--navy-deep) 34%, transparent);
+    }
+    .topnav-inner {
+      position: relative;
+      z-index: 1;
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--gap-md);
+      padding: 0 18px;
+      border: 1px solid color-mix(in oklab, var(--surface) 12%, transparent);
+      border-radius: var(--radius-pill);
+      background: color-mix(in oklab, var(--navy-deep) 94%, var(--navy)) !important;
+      box-shadow:
+        0 14px 34px color-mix(in oklab, var(--navy-deep) 30%, transparent),
+        0 1px 0 color-mix(in oklab, var(--surface) 10%, transparent) inset;
+      transition: box-shadow 220ms ease, background 220ms ease;
+    }
+    .topnav.is-scrolled .topnav-inner {
+      min-height: 74px;
+      background: color-mix(in oklab, var(--navy-deep) 96%, var(--navy)) !important;
+      box-shadow:
+        0 16px 38px color-mix(in oklab, var(--navy-deep) 38%, transparent),
+        0 1px 0 color-mix(in oklab, var(--surface) 10%, transparent) inset;
+    }
+    .logo,
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--gap-sm);
+      font-weight: 900;
+      color: var(--surface);
+    }
+    .logo-mark {
+      position: relative;
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 30% 24%, color-mix(in oklab, var(--gold) 28%, var(--navy-soft)), var(--navy-deep) 66%);
+      color: var(--surface);
+      box-shadow: 0 12px 28px color-mix(in oklab, var(--navy-deep) 44%, transparent);
+      overflow: hidden;
+    }
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: 50%;
+      border: 1px solid color-mix(in oklab, var(--gold) 65%, transparent);
+      pointer-events: none;
+    }
+    .brand-mark-svg { width: 72%; height: 72%; }
+    .logo-copy {
+      display: grid;
+      gap: 1px;
+      line-height: 1.1;
+    }
+    .logo-name {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 900;
+      color: var(--surface);
+      letter-spacing: -0.01em;
+    }
+    .logo-copy small {
+      color: color-mix(in oklab, var(--surface) 62%, transparent);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-family: var(--font-latin);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: color-mix(in oklab, var(--surface) 76%, transparent);
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .nav-links > a,
+    .nav-trigger {
+      position: relative;
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 13px;
+      border: 0;
+      border-radius: var(--radius-pill);
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      font-weight: 800;
+      line-height: 1;
+      transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+    }
+    .nav-service { position: relative; }
+    .nav-trigger::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-inline-start: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(-45deg) translateY(-1px);
+      opacity: 0.75;
+      transition: transform 180ms ease;
+    }
+    .nav-service:hover .nav-trigger,
+    .nav-service.is-open .nav-trigger,
+    .nav-trigger:focus-visible,
+    .nav-links > a:hover,
+    .nav-links > a.is-active {
+      color: var(--surface);
+      background: color-mix(in oklab, var(--accent) 18%, transparent);
+      transform: translateY(-1px);
+      outline: 0;
+    }
+    .nav-service.is-open .nav-trigger::before,
+    .nav-service:hover .nav-trigger::before { transform: rotate(135deg) translateY(1px); }
+    .services-dropdown {
+      position: absolute;
+      top: calc(100% + 12px);
+      right: 0;
+      width: min(360px, 82vw);
+      padding: 10px;
+      border: 1px solid color-mix(in oklab, var(--accent) 22%, var(--surface));
+      border-radius: 20px;
+      background: color-mix(in oklab, var(--navy-deep) 96%, transparent);
+      box-shadow: 0 24px 62px color-mix(in oklab, var(--navy-deep) 52%, transparent);
+      opacity: 0;
+      transform: translateY(-8px) scale(0.98);
+      pointer-events: none;
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+    .nav-service:hover .services-dropdown,
+    .nav-service.is-open .services-dropdown,
+    .nav-service:focus-within .services-dropdown {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+    .services-dropdown a {
+      display: grid;
+      gap: 3px;
+      padding: 12px 13px;
+      border-radius: 14px;
+      color: color-mix(in oklab, var(--surface) 86%, transparent);
+      white-space: normal;
+    }
+    .services-dropdown a strong { color: var(--surface); font-size: 14px; }
+    .services-dropdown a span {
+      color: color-mix(in oklab, var(--surface) 58%, transparent);
+      font-family: var(--font-latin);
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .services-dropdown a:hover,
+    .services-dropdown a.is-active {
+      color: var(--surface);
+      background: color-mix(in oklab, var(--accent) 16%, transparent);
+    }
+    .services-dropdown a[aria-disabled="true"] { cursor: default; }
+    .coming-soon {
+      display: inline-flex;
+      width: fit-content;
+      margin-inline-start: 6px;
+      padding: 2px 7px;
+      border: 1px solid color-mix(in oklab, var(--accent) 48%, transparent);
+      border-radius: var(--radius-pill);
+      color: var(--gold-soft);
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 900;
+    }
+    .nav-links .nav-cta {
+      margin-inline-start: 4px;
+      background: var(--accent);
+      color: var(--accent-on);
+      box-shadow: 0 10px 22px color-mix(in oklab, var(--accent) 18%, transparent);
+    }
+    .nav-links .nav-cta:hover { color: var(--accent-on); background: var(--gold-soft); }
+    .menu-button { display: none; }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--gap-xs);
+      padding: 12px 24px;
+      border: 1.5px solid transparent;
+      border-radius: var(--radius-pill);
+      font-weight: 900;
+      line-height: 1.2;
+      transition: transform 120ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--accent-on);
+      box-shadow: 0 16px 30px color-mix(in oklab, var(--accent) 24%, transparent);
+    }
+
+    .hero {
+      padding-block: clamp(56px, 7vw, 84px);
+      color: var(--surface);
+      background:
+        radial-gradient(circle at 78% 20%, color-mix(in oklab, var(--accent) 14%, transparent), transparent 20rem),
+        linear-gradient(180deg, var(--navy-deep), var(--navy));
+    }
+    .hero-grid,
+    .split-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+      gap: clamp(28px, 5vw, 64px);
+      align-items: center;
+    }
+    .hero h1,
+    .section-head h2 {
+      margin: 0;
+      font-family: var(--font-display);
+      letter-spacing: -0.01em;
+      text-wrap: pretty;
+    }
+    .hero h1 {
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: 1.08;
+      max-width: 12ch;
+    }
+    .hero p {
+      max-width: 48ch;
+      margin: 0;
+      color: color-mix(in oklab, var(--surface) 72%, transparent);
+      font-size: clamp(16px, 1.6vw, 20px);
+      line-height: 1.8;
+    }
+    .section {
+      padding-block: clamp(58px, 8vw, 96px);
+      background: var(--surface-warm);
+    }
+    .section.alt { background: color-mix(in oklab, var(--surface) 82%, var(--surface-warm)); }
+    .section.dark {
+      background:
+        radial-gradient(circle at 18% 12%, color-mix(in oklab, var(--accent) 10%, transparent), transparent 18rem),
+        linear-gradient(135deg, var(--navy), var(--navy-deep));
+      color: var(--surface);
+    }
+    .section-head {
+      display: grid;
+      gap: 10px;
+      margin-bottom: clamp(26px, 4vw, 42px);
+      text-align: center;
+    }
+    .section-head h2 {
+      color: inherit;
+      font-size: clamp(28px, 3.3vw, 44px);
+      line-height: 1.18;
+    }
+    .section-head p {
+      max-width: 58ch;
+      margin: 0 auto;
+      color: color-mix(in oklab, currentColor 64%, transparent);
+      font-size: 17px;
+    }
+    .placeholder {
+      min-height: 320px;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      border: 1px solid color-mix(in oklab, var(--accent) 24%, var(--surface));
+      border-radius: 30px;
+      background:
+        linear-gradient(135deg, color-mix(in oklab, var(--surface) 86%, var(--surface-warm)), color-mix(in oklab, var(--accent) 9%, var(--surface))),
+        repeating-linear-gradient(90deg, transparent 0 28px, color-mix(in oklab, var(--navy) 8%, transparent) 28px 29px);
+      color: color-mix(in oklab, var(--navy) 72%, var(--muted));
+      font-weight: 900;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+    }
+    .hero .placeholder {
+      min-height: 380px;
+      color: var(--surface);
+      background:
+        radial-gradient(circle at 68% 34%, color-mix(in oklab, var(--accent) 18%, transparent), transparent 8rem),
+        linear-gradient(135deg, color-mix(in oklab, var(--navy-soft) 86%, var(--navy-deep)), var(--navy-deep));
+      border-color: color-mix(in oklab, var(--accent) 28%, transparent);
+    }
+    .check-list {
+      display: grid;
+      gap: 16px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .check-item {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 12px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: var(--surface);
+      box-shadow: 0 10px 28px color-mix(in oklab, var(--navy-deep) 8%, transparent);
+    }
+    .check-icon {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--cta-green-soft);
+      color: var(--cta-green);
+      font-weight: 900;
+    }
+    .check-item h3,
+    .pack-card h3,
+    .feature-card h3 {
+      margin: 0 0 6px;
+      color: var(--navy-deep);
+      font-size: 20px;
+      line-height: 1.25;
+    }
+    .check-item p,
+    .pack-card p,
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.75;
+    }
+    .cards-3,
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .feature-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .pack-card,
+    .feature-card {
+      display: grid;
+      gap: 16px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      background: var(--surface);
+      box-shadow: var(--shadow-card);
+    }
+    .pack-card .placeholder {
+      min-height: 210px;
+      border-radius: 22px;
+      box-shadow: none;
+      font-size: 14px;
+    }
+    .feature-card {
+      padding: 22px;
+      border-color: color-mix(in oklab, var(--accent) 20%, var(--border));
+    }
+    .final-cta {
+      text-align: center;
+    }
+    .final-cta h2 {
+      margin: 0 0 18px;
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.2;
+    }
+
+    .pagefoot {
+      padding-block: clamp(52px, 8vw, 82px) 32px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-deep));
+      color: color-mix(in oklab, var(--surface) 76%, transparent);
+      font-size: 15px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(220px, 1.2fr) repeat(3, minmax(0, 0.9fr));
+      gap: clamp(28px, 5vw, 58px);
+      align-items: start;
+    }
+    .footer-brand { display: grid; gap: var(--gap-md); max-width: 360px; }
+    .footer-logo { color: var(--surface); font-size: 26px; line-height: 1.1; }
+    .footer-logo .logo-mark { width: 58px; height: 58px; }
+    .footer-logo-text { display: grid; gap: 3px; line-height: 1.1; }
+    .footer-logo-name {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--surface);
+    }
+    .footer-logo-en {
+      font-family: var(--font-latin);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: color-mix(in oklab, var(--surface) 62%, transparent);
+    }
+    .footer-logo-tag {
+      margin-top: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gold-soft);
+    }
+    .footer-brand p { margin: 0; color: color-mix(in oklab, var(--surface) 62%, transparent); }
+    .footer-col h3 {
+      margin-bottom: 18px;
+      color: var(--surface);
+      font-family: var(--font-display);
+      font-size: 16px;
+      line-height: 1.25;
+    }
+    .footer-links {
+      display: grid;
+      gap: 11px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .footer-links a,
+    .footer-links span {
+      color: color-mix(in oklab, var(--surface) 76%, transparent);
+      font-weight: 650;
+    }
+    .footer-links a:hover { color: var(--gold-soft); }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--gap-md);
+      margin-top: clamp(42px, 7vw, 72px);
+      padding-top: 22px;
+      border-top: 1px solid color-mix(in oklab, var(--surface) 12%, transparent);
+      color: color-mix(in oklab, var(--surface) 48%, transparent);
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: var(--radius-pill);
+      background: color-mix(in oklab, var(--surface) 9%, transparent);
+      color: color-mix(in oklab, var(--surface) 82%, transparent);
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero .stack { order: 1; }
+      .hero .placeholder { order: 2; }
+      .hero p { order: 3; }
+      .hero .btn { order: 4; }
+      .cards-3,
+      .feature-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 720px) {
+      :root { --gutter: 18px; }
+      html { scroll-padding-top: 104px; }
+      .topnav { padding-block: max(10px, env(safe-area-inset-top)) 10px; }
+      .topnav-inner,
+      .topnav.is-scrolled .topnav-inner {
+        min-height: 68px;
+        padding-inline: 12px;
+      }
+      .logo { gap: 10px; }
+      .logo-mark { width: 40px; height: 40px; }
+      .logo-copy { align-content: center; gap: 1px; }
+      .logo-name { font-size: 16px; }
+      .logo-copy small {
+        font-size: 9px;
+        letter-spacing: 0.14em;
+        white-space: nowrap;
+      }
+      .menu-button {
+        width: 48px;
+        height: 48px;
+        border: 0;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: color-mix(in oklab, var(--surface) 10%, transparent);
+        color: var(--surface);
+        position: relative;
+      }
+      .menu-button span {
+        position: absolute;
+        width: 18px;
+        height: 2px;
+        border-radius: var(--radius-pill);
+        background: currentColor;
+        transition: transform 220ms ease, opacity 180ms ease;
+      }
+      .menu-button span:nth-child(1) { transform: translateY(-6px); }
+      .menu-button span:nth-child(3) { transform: translateY(6px); }
+      body.menu-open .menu-button { background: var(--accent); color: var(--accent-on); }
+      body.menu-open .menu-button span:nth-child(1) { transform: rotate(45deg); }
+      body.menu-open .menu-button span:nth-child(2) { opacity: 0; }
+      body.menu-open .menu-button span:nth-child(3) { transform: rotate(-45deg); }
+      .nav-links {
+        position: fixed;
+        inset: 92px 18px auto 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        padding: 14px;
+        background: var(--surface);
+        border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+        border-radius: 26px;
+        box-shadow: var(--shadow-soft);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-14px) scale(0.98);
+        transition: opacity 220ms ease, transform 220ms ease;
+      }
+      body.menu-open .nav-links {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0) scale(1);
+      }
+      .nav-links > a,
+      .nav-trigger {
+        min-height: 46px;
+        width: 100%;
+        justify-content: space-between;
+        padding: 12px 15px;
+        font-size: 15px;
+        border-radius: 18px;
+        color: var(--fg);
+      }
+      .nav-trigger::before { order: 2; transform: rotate(-45deg); }
+      .nav-service { display: grid; gap: 6px; }
+      .nav-service.is-open .nav-trigger {
+        color: var(--navy);
+        background: color-mix(in oklab, var(--accent) 18%, var(--surface));
+      }
+      .nav-service.is-open .nav-trigger::before { transform: rotate(135deg); }
+      .services-dropdown {
+        position: static;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        border: 0;
+        border-radius: 18px;
+        background: color-mix(in oklab, var(--navy) 6%, var(--surface));
+        box-shadow: none;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+        transition: max-height 220ms ease, padding 220ms ease;
+      }
+      .nav-service.is-open .services-dropdown {
+        max-height: 360px;
+        padding: 8px;
+        border: 1px solid color-mix(in oklab, var(--accent) 22%, var(--border));
+      }
+      .services-dropdown a {
+        min-height: 42px;
+        padding: 10px 12px;
+        color: var(--fg);
+        background: var(--surface);
+      }
+      .services-dropdown a strong { color: var(--fg); }
+      .services-dropdown a span { color: var(--muted); }
+      .nav-links .nav-cta {
+        min-height: 50px;
+        justify-content: center;
+        margin: 4px 0 0;
+      }
+      .hero { padding-block: 34px 44px; }
+      .hero h1 { font-size: clamp(30px, 8vw, 36px); max-width: none; }
+      .hero p { font-size: 15.5px; }
+      .hero .placeholder,
+      .placeholder { min-height: 210px; border-radius: 22px; }
+      .section { padding-block: 44px; }
+      .section-head { text-align: start; }
+      .section-head h2 { font-size: clamp(24px, 7vw, 30px); }
+      .section-head p { margin-inline: 0; font-size: 15.5px; }
+      .cards-3,
+      .feature-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .check-item {
+        grid-template-columns: 26px 1fr;
+        padding: 16px;
+      }
+      .pack-card { padding: 16px; }
+      .pack-card .placeholder { min-height: 180px; }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    @media (max-width: 390px) {
+      :root { --gutter: 14px; }
+      .topnav-inner { padding-inline: 10px; }
+      .logo-copy small { max-width: 126px; overflow: hidden; text-overflow: ellipsis; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topnav">
+    <div class="container topnav-inner">
+      <a class="logo" href="landing.html" aria-label="HASEEF Global Sourcing — حصيف">
+        <span class="logo-mark" aria-hidden="true">
+          <svg class="brand-mark-svg" viewBox="0 0 64 64" role="img">
+            <path d="M34 11c-10 2-18 10-20 20 7-5 16-7 27-6-5 4-9 9-11 16 9-2 17-8 22-18-4 0-8-1-12-3 6-1 10-4 13-9-6 2-12 2-19 0Z" fill="currentColor"/>
+            <path d="M17 40c9 7 22 7 31 0" fill="none" stroke="var(--gold)" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="46" cy="23" r="3" fill="var(--gold)"/>
+          </svg>
+        </span>
+        <span class="logo-copy">
+          <span class="logo-name">حصيف</span>
+          <small>HASEEF SOURCING</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="روابط الصفحة">
+        <a href="landing.html#audience">لمن نخدم</a>
+        <a href="landing.html#apart">لماذا نحن</a>
+        <div class="nav-service">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="private-services-menu">خدماتنا</button>
+          <div class="services-dropdown" id="private-services-menu" role="menu" aria-label="خدماتنا">
+            <a href="pricing.html" role="menuitem">
+              <strong>التوريد والشراء</strong>
+              <span>Sourcing</span>
+            </a>
+            <a href="#" role="menuitem" aria-disabled="true">
+              <strong>التصوير والتصميم <em class="coming-soon">قريباً</em></strong>
+              <span>Photos &amp; Design</span>
+            </a>
+            <a href="extra-services.html" role="menuitem">
+              <strong>الخدمات الإضافية</strong>
+              <span>Extra Services</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-service nav-solution">
+          <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="private-solutions-menu">الحلول</button>
+          <div class="services-dropdown" id="private-solutions-menu" role="menu" aria-label="الحلول">
+            <a href="private-label.html" role="menuitem">
+              <strong>Private Label Product Development</strong>
+              <span>Private Label</span>
+            </a>
+            <a href="product-development.html" role="menuitem">
+              <strong>Product Development</strong>
+              <span>Product Development</span>
+            </a>
+            <a class="is-active" href="shipping-solution.html" role="menuitem">
+              <strong>Shipping Solution</strong>
+              <span>Shipping</span>
+            </a>
+            <a href="quality-control.html" role="menuitem">
+              <strong>Quality Control</strong>
+              <span>QC</span>
+            </a>
+            <a href="credit-payment-terms.html" role="menuitem">
+              <strong>Credit Payment Terms</strong>
+              <span>Credit</span>
+            </a>
+            <a href="affiliate-program.html" role="menuitem">
+              <strong>Affiliate Program</strong>
+              <span>Affiliate</span>
+            </a>
+          </div>
+        </div>
+        <a href="our-products.html">المنتجات</a>
+        <a href="landing.html#services">الخدمات</a>
+        <a href="landing.html#requests">أمثلة الطلبات</a>
+        <a href="landing.html#faq">الأسئلة</a>
+        <a class="nav-cta" href="start-sourcing-request.html#inquiry">ابدأ واتساب</a>
+      </nav>
+      <button class="menu-button" type="button" aria-label="فتح القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero" data-od-id="shipping-hero">
+      <div class="container hero-grid">
+        <div class="stack">
+          <h1>شحن عالمي سريع وآمن</h1>
+          <p>حلول شحن مرنة لأي نشاط تجاري.</p>
+          <a class="btn btn-primary" href="start-sourcing-request.html#inquiry">ابدأ الآن</a>
+        </div>
+        <div class="placeholder">مكان صورة الشحن العالمي</div>
+      </div>
+    </section>
+
+    <section class="section" data-od-id="international-courier">
+      <div class="container">
+        <div class="section-head">
+          <h2>الشحن السريع الدولي</h2>
+          <p>للشحنات التي تقل عن 500 كجم، تقوم خدمة الشحن السريع الدولي لدينا بالتوصيل مباشرة إلى بابك خلال 3 إلى 5 أيام في معظم الدول والمناطق.</p>
+        </div>
+        <div class="split-grid">
+          <div class="placeholder">مكان صورة الشحن السريع الدولي</div>
+          <ul class="check-list">
+            <li class="check-item">
+              <span class="check-icon">✓</span>
+              <div>
+                <h3>أسعار تنافسية</h3>
+                <p>استفد من توفير التكاليف من خلال الخصومات المعتمدة على حجم الشحنات التي نحصل عليها من شركات الشحن السريع، مما يساعد على إبقاء أسعار الشحن منخفضة.</p>
+              </div>
+            </li>
+            <li class="check-item">
+              <span class="check-icon">✓</span>
+              <div>
+                <h3>شحن البضائع الخطرة</h3>
+                <p>تقوم شبكتنا بشحن جميع البضائع بأمان وكفاءة، بما في ذلك المنتجات المقيدة مثل البطاريات، والسوائل، والمساحيق.</p>
+              </div>
+            </li>
+            <li class="check-item">
+              <span class="check-icon">✓</span>
+              <div>
+                <h3>المساعدة في التعويض</h3>
+                <p>في حال فقدان الطرد، نعمل بشكل وثيق مع شركات الشحن والموردين لتسهيل التعويض عن رسوم الشحن وتكاليف المنتجات.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div style="margin-top: 24px; text-align: center;">
+          <a class="btn btn-primary" href="start-sourcing-request.html#inquiry">اطلب عرض سعر</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" data-od-id="ship-to-port">
+      <div class="container">
+        <div class="section-head">
+          <h2>الشحن إلى الميناء</h2>
+          <p>إذا كنت تفضل استخدام وكيل الشحن الخاص بك للخدمات اللوجستية المحلية، فيمكننا تسليم شحنتك إلى أي ميناء بحري أو جوي أو محطة قطار تحددها.</p>
+        </div>
+        <div class="cards-3">
+          <article class="pack-card">
+            <div class="placeholder">مكان صورة الشحن البحري</div>
+            <h3>الشحن البحري</h3>
+            <p>هذه هي طريقة الشحن الأقل تكلفة لكنها الأبطأ، وتستغرق من 15 إلى 40 يومًا من الصين إلى ميناء الوجهة. سنختار LCL أو FCL بناءً على حجم شحنتك.</p>
+          </article>
+          <article class="pack-card">
+            <div class="placeholder">مكان صورة الشحن الجوي</div>
+            <h3>الشحن الجوي</h3>
+            <p>هذه هي أسرع طريقة شحن، حيث تستغرق مدة النقل من الصين إلى مطار الوجهة من 2 إلى 5 أيام فقط. وبالنسبة للشحنات التي تزيد عن 500 كجم، يكون هذا الخيار أكثر توفيرًا من الشحن السريع الدولي.</p>
+          </article>
+          <article class="pack-card">
+            <div class="placeholder">مكان صورة الشحن بالقطار</div>
+            <h3>الشحن بالقطار</h3>
+            <p>نوفر شحن FCL و LCL إلى الدول الواقعة على طول الجسر البري الأوراسي الجديد. يستغرق الشحن السريع بالقطار نصف مدة الشحن البحري، كما أنه أرخص بكثير من الشحن الجوي.</p>
+          </article>
+        </div>
+        <div style="margin-top: 24px; text-align: center;">
+          <a class="btn btn-primary" href="start-sourcing-request.html#inquiry">اطلب عرض سعر</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" data-od-id="ship-to-door">
+      <div class="container">
+        <div class="section-head">
+          <h2>الشحن حتى الباب</h2>
+          <p>نوفر خدمات لوجستية من الباب إلى الباب لمعظم الدول، بما في ذلك جميع ضرائب التصدير والاستيراد. وبالإضافة إلى المستودعات الخاصة، نقوم بالتوصيل مباشرة إلى مراكز تنفيذ طلبات Amazon أو مواقع الأطراف الثالثة الأخرى. يقوم فريقنا بالشحن بحرًا أو جوًا أو بالقطار، ويدير إجراءات الاستيراد، ويكمل التوصيل النهائي بالشاحنة أو شركة الشحن السريع.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>التوصيل المحلي بالشاحنات</h3>
+            <p>هذا هو الحل اللوجستي المحلي الأكثر شيوعًا في نموذج الشحن البحري التقليدي حتى الباب. وبفضل تكلفته الأقل، يكون التوصيل المحلي بالشاحنات مناسبًا للبضائع التي يزيد حجمها عن 3CBM. وتعتمد مدة النقل المحلي على جدول شركة الخدمات اللوجستية، وعادةً تستغرق من 3 إلى 10 أيام.</p>
+          </article>
+          <article class="feature-card">
+            <h3>التوصيل المحلي السريع</h3>
+            <p>يجمع هذا الحل بين النقل البحري الدولي السريع والتوصيل المحلي السريع، مما يجعله أسرع بنسبة 30% من الشحن البحري التقليدي مع التوصيل بالشاحنات. كما يقلل التكاليف بنسبة تصل إلى 70% مقارنة بالشحن السريع أو الشحن الجوي. الحد الأدنى لحجم الشحنة هو 50 كجم.</p>
+          </article>
+        </div>
+        <div style="margin-top: 24px; text-align: center;">
+          <a class="btn btn-primary" href="start-sourcing-request.html#inquiry">اشحن الآن</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-od-id="cargo-consolidation">
+      <div class="container split-grid">
+        <div class="placeholder">مكان صورة تجميع الشحنات</div>
+        <div class="stack">
+          <h2>تجميع الشحنات</h2>
+          <p>نقوم بجمع البضائع من موردين في مدن مختلفة داخل الصين ونجمعها في حاوية واحدة لتقليل تكاليف الشحن.</p>
+          <p>للعملاء على خطط <a href="pricing.html#basic">Basic</a> أو <a href="pricing.html#pro">Pro</a>، نوفر تخزينًا مجانيًا وتجميعًا للشحنات لمدة شهر إلى شهرين.</p>
+          <a class="btn btn-primary" href="start-sourcing-request.html#inquiry">احصل على نصيحة شحن خلال دقائق</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pagefoot">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="footer-logo" href="landing.html" aria-label="HASEEF Global Sourcing — حصيف">
+            <span class="logo-mark" aria-hidden="true">
+              <svg class="brand-mark-svg" viewBox="0 0 64 64" role="img">
+                <path d="M34 11c-10 2-18 10-20 20 7-5 16-7 27-6-5 4-9 9-11 16 9-2 17-8 22-18-4 0-8-1-12-3 6-1 10-4 13-9-6 2-12 2-19 0Z" fill="currentColor"/>
+                <path d="M17 40c9 7 22 7 31 0" fill="none" stroke="var(--gold)" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="46" cy="23" r="3" fill="var(--gold)"/>
+              </svg>
+            </span>
+            <span class="footer-logo-text">
+              <span class="footer-logo-name">حصيف</span>
+              <span class="footer-logo-en">HASEEF SOURCING</span>
+              <span class="footer-logo-tag">جدة · مكة · الرياض</span>
+            </span>
+          </a>
+          <p>مكتب دعم استيراد من الصين للتجار السعوديين: بحث موردين، فحص جودة، متابعة إنتاج، وتجهيز شحن.</p>
+          <div class="tags">
+            <span class="tag">جدة</span>
+            <span class="tag">مكة</span>
+            <span class="tag">الرياض</span>
+            <span class="tag">واتساب أولا</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>القائمة الرئيسية</h3>
+          <ul class="footer-links">
+            <li><a href="landing.html#audience">لمن نخدم</a></li>
+            <li><a href="landing.html#apart">لماذا نحن</a></li>
+            <li><a href="landing.html#services">الخدمات</a></li>
+            <li><a href="landing.html#requests">أمثلة الطلبات</a></li>
+            <li><a href="landing.html#faq">الأسئلة المتكررة</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>خدماتنا</h3>
+          <ul class="footer-links">
+            <li><a href="pricing.html">التوريد والشراء</a></li>
+            <li><span>فحص جودة قبل الشحن</span></li>
+            <li><span>متابعة عينة وإنتاج</span></li>
+            <li><span>تجميع وتخزين داخل الصين</span></li>
+            <li><span>تغليف وتخصيص بسيط</span></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>الفئات التي نخدمها</h3>
+          <ul class="footer-links">
+            <li><span>إكسسوارات الجوال والسيارات</span></li>
+            <li><span>منزليات وهدايا وتجهيزات محلات</span></li>
+            <li><span>مطاعم وكافيهات وتجهيزات تشغيل</span></li>
+            <li><span>رمضان وعمرة ومواسم الشركات</span></li>
+            <li><a href="start-sourcing-request.html#inquiry">ابدأ عبر واتساب</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© حصيف · HASEEF Global Sourcing. نسخة أولية قابلة للتحديث.</span>
+        <span>China sourcing support for Saudi importers and wholesalers.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const privateUi = {
+      topnav: document.querySelector('.topnav'),
+      menuButton: document.querySelector('.menu-button'),
+      navLinks: document.querySelectorAll('.nav-links a'),
+      dropdowns: document.querySelectorAll('.nav-service'),
+      disabledLinks: document.querySelectorAll('a[aria-disabled="true"]')
+    };
+
+    const setHeaderState = () => {
+      privateUi.topnav?.classList.toggle('is-scrolled', window.scrollY > 18);
+    };
+
+    const closeMenus = () => {
+      document.body.classList.remove('menu-open');
+      privateUi.menuButton?.setAttribute('aria-expanded', 'false');
+      privateUi.dropdowns.forEach((menu) => {
+        menu.classList.remove('is-open');
+        menu.querySelector('.nav-trigger')?.setAttribute('aria-expanded', 'false');
+      });
+    };
+
+    privateUi.menuButton?.addEventListener('click', () => {
+      const isOpen = document.body.classList.toggle('menu-open');
+      privateUi.menuButton.setAttribute('aria-expanded', String(isOpen));
+      if (!isOpen) {
+        privateUi.dropdowns.forEach((menu) => {
+          menu.classList.remove('is-open');
+          menu.querySelector('.nav-trigger')?.setAttribute('aria-expanded', 'false');
+        });
+      }
+    });
+
+    privateUi.dropdowns.forEach((menu) => {
+      const trigger = menu.querySelector('.nav-trigger');
+      trigger?.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        const isOpen = menu.classList.toggle('is-open');
+        trigger.setAttribute('aria-expanded', String(isOpen));
+        privateUi.dropdowns.forEach((otherMenu) => {
+          if (otherMenu !== menu) {
+            otherMenu.classList.remove('is-open');
+            otherMenu.querySelector('.nav-trigger')?.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    });
+
+    privateUi.disabledLinks.forEach((link) => {
+      link.addEventListener('click', (event) => event.preventDefault());
+    });
+
+    privateUi.navLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        if (!link.hasAttribute('aria-disabled')) closeMenus();
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!event.target.closest('.nav-service')) {
+        privateUi.dropdowns.forEach((menu) => {
+          menu.classList.remove('is-open');
+          menu.querySelector('.nav-trigger')?.setAttribute('aria-expanded', 'false');
+        });
+      }
+      if (!event.target.closest('.topnav-inner') && document.body.classList.contains('menu-open')) {
+        closeMenus();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenus();
+    });
+
+    setHeaderState();
+    window.addEventListener('scroll', setHeaderState, { passive: true });
+  </script>
+</body>
+</html>
